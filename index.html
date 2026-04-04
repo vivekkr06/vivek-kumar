@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vivek Kumar — Senior Product Manager specialising in energy trading, B2B platforms, and mission-critical systems. Based in Rotterdam, NL.">
+<title>Vivek Kumar — Senior Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & TOKENS
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sand:           #F4EFE6;
+  --warm:           #FDFBF8;
+  --ink:            #1A1916;
+  --ink-mid:        #534F49;
+  --ink-light:      #9A9590;
+  --terra:          #B85C32;
+  --terra-light:    #E8C4B0;
+  --terra-faint:    #F7EDE6;
+  --sage:           #3D5E50;
+  --sage-light:     #E2EDE8;
+  --electric:       #2A5FD4;
+  --electric-faint: #EBF0FB;
+  --electric-light: #B3C6F0;
+  --border:         rgba(26,25,22,0.11);
+  --border-faint:   rgba(26,25,22,0.06);
+  --serif:  'Lora', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --r:  4px;
+  --rl: 10px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   NAV
+============================================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3rem;
+  background: rgba(253,251,248,0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 0.5px solid var(--border-faint);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1rem; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--terra); }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links a {
+  font-size: 0.82rem; font-weight: 400;
+  color: var(--ink-mid); text-decoration: none;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--terra); }
+.nav-cta {
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--warm); background: var(--ink);
+  text-decoration: none;
+  padding: .45rem 1.15rem;
+  border-radius: var(--r);
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--terra); }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  padding-top: 64px;
+}
+.hero-l {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 3.5rem 5rem 5rem;
+  border-right: 0.5px solid var(--border);
+}
+.eyebrow {
+  font-size: 0.74rem; font-weight: 500;
+  color: var(--terra);
+  letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--terra); display: inline-block;
+}
+h1.headline {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 500; line-height: 1.15;
+  letter-spacing: -.025em; color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+h1.headline em { font-style: italic; color: var(--terra); }
+.hero-sub {
+  font-size: 1rem; color: var(--ink-mid);
+  line-height: 1.85; max-width: 480px;
+  margin-bottom: 2rem;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 2.25rem; }
+.htag {
+  font-size: .72rem; font-weight: 400;
+  color: var(--ink-mid); border: 0.5px solid var(--border);
+  padding: .25rem .7rem; border-radius: 100px; letter-spacing: .02em;
+}
+.htag.hi { background: var(--electric-faint); border-color: var(--electric-light); color: var(--electric); }
+.htag.ht { background: var(--terra-faint); border-color: var(--terra-light); color: var(--terra); }
+.hero-actions { display: flex; gap: .85rem; align-items: center; }
+.btn-p {
+  display: inline-block;
+  font-size: .88rem; font-weight: 500;
+  color: var(--warm); background: var(--ink);
+  text-decoration: none;
+  padding: .75rem 1.75rem; border-radius: var(--r);
+  transition: background .2s, transform .15s;
+}
+.btn-p:hover { background: var(--terra); transform: translateY(-1px); }
+.btn-g {
+  display: inline-block;
+  font-size: .88rem; color: var(--ink-mid);
+  text-decoration: none;
+  padding: .75rem 1.25rem;
+  border: 0.5px solid var(--border); border-radius: var(--r);
+  transition: border-color .2s, color .2s;
+}
+.btn-g:hover { border-color: var(--ink); color: var(--ink); }
+
+.hero-r {
+  background: var(--sand);
+  display: flex; flex-direction: column;
+  padding: 3rem; gap: 1.5rem; justify-content: center;
+}
+.stat-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border);
+  border: 0.5px solid var(--border); border-radius: var(--rl); overflow: hidden;
+}
+.stat-c { background: var(--warm); padding: 1.5rem; }
+.stat-n {
+  font-family: var(--serif);
+  font-size: 2.2rem; font-weight: 500;
+  line-height: 1; color: var(--ink);
+  letter-spacing: -.03em; margin-bottom: .25rem;
+}
+.stat-n span { color: var(--terra); }
+.stat-l { font-size: .7rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: .06em; }
+
+.ai-badge {
+  background: var(--electric-faint);
+  border: 0.5px solid var(--electric-light);
+  border-radius: var(--rl);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: flex-start; gap: .85rem;
+}
+.ai-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--electric); margin-top: 6px; flex-shrink: 0;
+  animation: pulse-b 2s infinite;
+}
+@keyframes pulse-b {
+  0%,100% { box-shadow: 0 0 0 3px rgba(42,95,212,.15); }
+  50%      { box-shadow: 0 0 0 7px rgba(42,95,212,.05); }
+}
+.ai-badge-text p { font-size: .82rem; color: var(--electric); font-weight: 500; margin-bottom: .2rem; }
+.ai-badge-text span { font-size: .78rem; color: var(--ink-mid); line-height: 1.5; }
+
+.hero-quote {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1rem; color: var(--ink-mid); line-height: 1.7;
+  border-left: 2px solid var(--terra-light); padding-left: 1rem;
+}
+
+/* ============================================================
+   SECTION COMMON
+============================================================ */
+section { padding: 5.5rem 0; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 3rem; }
+.sec-label {
+  font-size: .72rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: .6rem;
+}
+.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 500; color: var(--ink);
+  line-height: 1.2; letter-spacing: -.02em; margin-bottom: .85rem;
+}
+.sec-sub {
+  color: var(--ink-mid); font-size: .97rem;
+  max-width: 540px; line-height: 1.85; margin-bottom: 3rem;
+}
+hr.div { border: none; border-top: 0.5px solid var(--border); margin: 0; }
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about-grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 4rem; align-items: start; }
+.about-body p { font-size: 1rem; color: var(--ink-mid); line-height: 1.9; margin-bottom: 1.1rem; }
+.about-body p strong { color: var(--ink); font-weight: 500; }
+.about-body p:last-child { margin-bottom: 0; }
+.sidebar-block { background: var(--sand); border-radius: var(--rl); padding: 1.35rem; margin-bottom: .85rem; }
+.sidebar-block:last-child { margin-bottom: 0; }
+.sb-label { font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-light); margin-bottom: .65rem; }
+.sb-val { font-size: .88rem; color: var(--ink); line-height: 1.65; }
+.sb-val li { list-style: none; padding: .2rem 0; border-bottom: .5px solid var(--border-faint); }
+.sb-val li:last-child { border-bottom: none; }
+
+/* ============================================================
+   EXPERIENCE
+============================================================ */
+.exp-bg { background: var(--sand); }
+.exp-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 2.5rem; padding: 2.75rem 0;
+  border-bottom: .5px solid var(--border);
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-date { font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-light); margin-bottom: .4rem; }
+.exp-co { font-size: .85rem; font-weight: 500; color: var(--terra); margin-bottom: .25rem; }
+.exp-industry {
+  font-size: .72rem; color: var(--ink-light);
+  border: .5px solid var(--border); display: inline-block;
+  padding: .2rem .6rem; border-radius: 100px;
+  margin-top: .4rem; letter-spacing: .03em;
+}
+.exp-role {
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 500;
+  color: var(--ink); margin-bottom: .85rem;
+  letter-spacing: -.01em; line-height: 1.3;
+}
+.exp-narrative { font-size: .97rem; color: var(--ink-mid); line-height: 1.9; margin-bottom: 1.1rem; }
+.exp-narrative strong { color: var(--ink); font-weight: 500; }
+.pills { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .75rem; }
+.pill { font-size: .75rem; font-weight: 500; color: var(--sage); background: var(--sage-light); padding: .25rem .8rem; border-radius: 100px; }
+.pill.blue { color: var(--electric); background: var(--electric-faint); }
+
+/* ============================================================
+   AI PROJECT
+============================================================ */
+.ai-project-card {
+  background: var(--ink); border-radius: var(--rl);
+  overflow: hidden; display: grid; grid-template-columns: 1fr 1fr;
+}
+.ai-card-l { padding: 3rem; border-right: .5px solid rgba(255,255,255,.08); }
+.ai-card-l .sec-label { color: var(--electric-light); }
+.ai-card-l .sec-title { color: var(--warm); font-size: 1.5rem; }
+.ai-card-l p { font-size: .95rem; color: rgba(253,251,248,.6); line-height: 1.85; margin-bottom: 1.25rem; }
+.ai-card-l p:last-of-type { margin-bottom: 1.75rem; }
+.ai-card-l p strong { color: rgba(253,251,248,.9); font-weight: 500; }
+.ai-card-l .btn-g {
+  border-color: rgba(253,251,248,.2);
+  color: rgba(253,251,248,.6);
+  font-size: .82rem;
+}
+.ai-card-l .btn-g:hover { border-color: var(--terra-light); color: var(--terra-light); }
+.ai-card-r { padding: 3rem; display: flex; flex-direction: column; gap: 1rem; }
+.ai-feature {
+  background: rgba(255,255,255,.04);
+  border: .5px solid rgba(255,255,255,.09);
+  border-radius: var(--r); padding: 1.1rem 1.25rem;
+}
+.ai-feature-label { font-size: .7rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--electric-light); margin-bottom: .35rem; }
+.ai-feature-desc { font-size: .85rem; color: rgba(253,251,248,.55); line-height: 1.6; }
+.ai-feature-desc strong { color: rgba(253,251,248,.8); font-weight: 400; }
+.ai-status { display: flex; align-items: center; gap: .6rem; font-size: .78rem; color: rgba(253,251,248,.4); letter-spacing: .04em; margin-top: auto; padding-top: .5rem; }
+.ai-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #5CB87A; animation: pulse-g 2s infinite; }
+@keyframes pulse-g {
+  0%,100% { box-shadow: 0 0 0 3px rgba(92,184,122,.2); }
+  50%      { box-shadow: 0 0 0 6px rgba(92,184,122,.06); }
+}
+
+/* ============================================================
+   CASE STUDIES
+============================================================ */
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.case-card {
+  border: .5px solid var(--border); border-radius: var(--rl);
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.case-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(26,25,22,.08); }
+.case-head { padding: 1.75rem 1.75rem 1.35rem; border-bottom: .5px solid var(--border-faint); }
+.case-domain { font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--terra); margin-bottom: .6rem; }
+.case-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: .6rem; letter-spacing: -.01em; }
+.case-summary { font-size: .85rem; color: var(--ink-mid); line-height: 1.7; }
+.case-foot { padding: 1rem 1.75rem; display: flex; justify-content: space-between; align-items: center; }
+.case-metrics { display: flex; gap: 1.5rem; }
+.cm-n { display: block; font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); letter-spacing: -.02em; line-height: 1; }
+.cm-l { display: block; font-size: .65rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: .06em; margin-top: .15rem; }
+.case-arr { font-size: .9rem; color: var(--ink-light); transition: color .2s, transform .2s; }
+.case-card:hover .case-arr { color: var(--terra); transform: translateX(3px); }
+.case-card.accent { background: var(--terra-faint); border-color: var(--terra-light); }
+.case-card.accent .case-head { border-color: var(--terra-light); }
+
+/* ============================================================
+   WRITING
+============================================================ */
+.writing-bg { background: var(--sand); }
+.li-note {
+  background: var(--electric-faint);
+  border: .5px solid var(--electric-light);
+  border-radius: var(--r); padding: .75rem 1rem;
+  display: flex; align-items: center; gap: .6rem;
+  margin-bottom: 2rem; font-size: .82rem; color: var(--electric);
+}
+.li-note a { color: var(--electric); font-weight: 500; }
+.post-item {
+  display: grid; grid-template-columns: 72px 1fr 80px;
+  gap: 1.75rem; align-items: start;
+  padding: 1.5rem 0; border-bottom: .5px solid var(--border);
+  text-decoration: none; transition: .15s;
+}
+.post-item:first-child { border-top: .5px solid var(--border); }
+.post-item:hover .post-title { color: var(--terra); }
+.post-date { font-size: .75rem; color: var(--ink-light); padding-top: .15rem; line-height: 1.4; }
+.post-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: .3rem; letter-spacing: -.01em; transition: color .2s; }
+.post-exc { font-size: .83rem; color: var(--ink-light); line-height: 1.6; }
+.post-cta { font-size: .72rem; font-weight: 500; color: var(--electric); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; padding-top: .2rem; text-align: right; }
+.li-profile-cta { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+.li-profile-cta a {
+  font-size: .88rem; font-weight: 500; color: var(--ink);
+  text-decoration: none; border: .5px solid var(--border);
+  padding: .55rem 1.25rem; border-radius: var(--r);
+  transition: border-color .2s, color .2s;
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.li-profile-cta a:hover { border-color: var(--electric); color: var(--electric); }
+.li-profile-cta span { font-size: .82rem; color: var(--ink-light); }
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-bg { background: var(--ink); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.contact-bg .sec-label { color: var(--terra-light); }
+.contact-bg .sec-title { color: var(--warm); }
+.contact-l p { font-size: .97rem; color: rgba(253,251,248,.55); line-height: 1.85; margin-bottom: 1.75rem; }
+.contact-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+.contact-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .82rem; font-weight: 500;
+  color: var(--warm); text-decoration: none;
+  border: .5px solid rgba(253,251,248,.18);
+  padding: .55rem 1.1rem; border-radius: var(--r);
+  transition: border-color .2s, background .2s; letter-spacing: .02em;
+}
+.contact-link:hover { border-color: var(--terra-light); background: rgba(184,92,50,.18); }
+.contact-r {
+  background: rgba(253,251,248,.04);
+  border: .5px solid rgba(253,251,248,.1);
+  border-radius: var(--rl); padding: 2.25rem;
+}
+.contact-r blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.05rem; line-height: 1.75;
+  color: rgba(253,251,248,.8); margin-bottom: 1.25rem;
+}
+.avail { display: flex; align-items: center; gap: .55rem; font-size: .78rem; color: rgba(253,251,248,.4); letter-spacing: .04em; }
+.avail-dot { width: 6px; height: 6px; border-radius: 50%; background: #5CB87A; animation: pulse-g 2s infinite; }
+
+footer {
+  background: var(--ink);
+  border-top: .5px solid rgba(253,251,248,.07);
+  padding: 1.75rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+footer p { font-size: .77rem; color: rgba(253,251,248,.28); }
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+.fu { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.fu.vis { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE (basic)
+============================================================ */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-r { display: none; }
+  .hero-l { padding: 3rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+  .ai-project-card { grid-template-columns: 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .container { padding: 0 1.5rem; }
+  footer { flex-direction: column; gap: .5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav>
+  <a class="nav-logo" href="#">Vivek <span>Kumar</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#ai-project">AI Lab</a></li>
+    <li><a href="#cases">Work</a></li>
+    <li><a href="#writing">Writing</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Let's talk</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">Senior Product Manager · Energy &amp; Platform</div>
+    <h1 class="headline">
+      I sit with traders.<br>I ship with <em>engineers.</em><br>I build for users.
+    </h1>
+    <p class="hero-sub">
+      8+ years leading mission-critical B2B products across energy trading, EV infrastructure, and semiconductors. I translate operational pain into stable, scalable systems — and I never ship without talking to the people who'll use it.
+    </p>
+    <div class="hero-tags">
+      <span class="htag ht">Energy Trading</span>
+      <span class="htag ht">B2B SaaS</span>
+      <span class="htag">Platform Reliability</span>
+      <span class="htag">SLOs &amp; Observability</span>
+      <span class="htag hi">Agentic AI</span>
+      <span class="htag">Vendor Management</span>
+      <span class="htag">Regulatory · ACER / JAO</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-p" href="#cases">See my work</a>
+      <a class="btn-g" href="#about">My story</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="stat-grid">
+      <div class="stat-c">
+        <div class="stat-n">8<span>+</span></div>
+        <div class="stat-l">Years in product</div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Industries</div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-n">€2M</div>
+        <div class="stat-l">Revenue roadmap owned</div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-n">99<span>.95%</span></div>
+        <div class="stat-l">Uptime target delivered</div>
+      </div>
+    </div>
+    <div class="ai-badge">
+      <div class="ai-dot"></div>
+      <div class="ai-badge-text">
+        <p>Currently building: Agentic workflow tool</p>
+        <span>Exploring how LLMs and autonomous agents can reduce operational toil in trading platforms. Actively learning. Actively shipping.</span>
+      </div>
+    </div>
+    <blockquote class="hero-quote">
+      "The best PM insight I ever had came from sitting next to a trader during a live auction — not from a dashboard."
+    </blockquote>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid fu">
+      <div class="about-body">
+        <div class="sec-label">About</div>
+        <h2 class="sec-title">Engineer by training. Product leader by obsession.</h2>
+        <p>
+          I started as a <strong>design engineer at ASML</strong> — one of the most technically complex environments on earth. That gave me something rare: I'm genuinely comfortable in a room full of engineers debating microservice architecture, and equally comfortable sitting across from a trader trying to understand why their auction workflow breaks under pressure.
+        </p>
+        <p>
+          Moving into product felt less like a career change and more like finding the right vantage point. I could finally see the full picture — the user's frustration, the engineer's constraint, the business's obligation — and do something about all three at once.
+        </p>
+        <p>
+          Today I lead product at <strong>ETPA B.V.</strong>, owning the spot auction trading platform for European energy markets. It's mission-critical software where downtime isn't a support ticket — it's a P&amp;L event. That context sharpens your instincts fast.
+        </p>
+        <p>
+          I'm currently pursuing an <strong>Executive MBA at Amsterdam Business School</strong> and actively exploring how agentic AI systems can change the way complex B2B workflows operate. I write about all of it on LinkedIn — the craft, the failures, and the patterns that repeat across industries.
+        </p>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sb-label">Currently based in</div>
+          <div class="sb-val">Rotterdam, Netherlands &#127475;&#127473;</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sb-label">Open to</div>
+          <ul class="sb-val">
+            <li>Senior / Staff PM roles</li>
+            <li>Platform &amp; trading products</li>
+            <li>Fractional / advisory</li>
+            <li>AI product conversations</li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <div class="sb-label">Education</div>
+          <ul class="sb-val">
+            <li>Executive MBA · ABS (2024–2026)</li>
+            <li>MSc Electrical Engineering · TU/e</li>
+            <li>PSPO I · SPM (Product School)</li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <div class="sb-label">Technical stack</div>
+          <ul class="sb-val">
+            <li>Microservices · Event-driven · APIs</li>
+            <li>Grafana · Datadog · SLIs/SLOs</li>
+            <li>SQL · Python · Power BI</li>
+            <li>AWS · Salesforce · SAP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+<section class="exp-bg" id="experience">
+  <div class="container">
+    <div class="sec-label fu">Experience</div>
+    <h2 class="sec-title fu">The roles that shaped how I think</h2>
+    <p class="sec-sub fu">Not a list of responsibilities — a story of what I found, what I changed, and what I learned.</p>
+
+    <!-- ETPA -->
+    <div class="exp-item fu">
+      <div class="exp-meta">
+        <div class="exp-date">Feb 2025 — Present</div>
+        <div class="exp-co">ETPA B.V.</div>
+        <div class="exp-industry">Energy Trading</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Product Lead — Spot Auction Trading Platform</div>
+        <p class="exp-narrative">
+          When I joined ETPA, the challenge wasn't a lack of features — it was a platform built for yesterday's trading volumes trying to operate in today's regulatory environment. I started where I always start: <strong>with the traders themselves.</strong> Sitting next to them during live auctions, I mapped every friction point that a dashboard would never surface.
+        </p>
+        <p class="exp-narrative">
+          That discovery work became the backbone of a roadmap targeting <strong>€2M revenue by 2027</strong>. But the more important work was infrastructural: I defined SLOs, SLIs, and error budgets for core services — introducing the kind of engineering transparency that lets teams make decisions with confidence rather than gut feel. A decoupled architecture initiative followed, cutting deployment issues by roughly half and putting us on track for 99.95% uptime. In a trading platform, that's not an SLA metric — it's table stakes for enterprise trust.
+        </p>
+        <p class="exp-narrative">
+          The platform now runs across 3 squads, meets <strong>EU regulatory obligations for ACER and JAO</strong>, and has an 85% pilot approval rate from diamond-tier enterprise customers.
+        </p>
+        <div class="pills">
+          <span class="pill">&#8593; 85% enterprise pilot approval</span>
+          <span class="pill">&#8595; ~50% deployment issues</span>
+          <span class="pill">&#8595; ~30% MTTD via distributed tracing</span>
+          <span class="pill blue">ACER · JAO compliance</span>
+          <span class="pill blue">SLOs · SLIs · Error budgets</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVBox -->
+    <div class="exp-item fu">
+      <div class="exp-meta">
+        <div class="exp-date">Nov 2022 — May 2023</div>
+        <div class="exp-co">EVBox</div>
+        <div class="exp-industry">EV Infrastructure · B2B</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Technical Product Manager — B2B Portfolio</div>
+        <p class="exp-narrative">
+          EVBox is where I learned what it means to own a platform that never sleeps. <strong>~1 million events per hour across ~5,000 chargers globally</strong> — the cloud infrastructure roadmap I owned wasn't a backlog exercise, it was an operational commitment. Downtime meant stranded drivers and broken contracts.
+        </p>
+        <p class="exp-narrative">
+          My most consequential work here was less about features and more about <strong>alignment</strong>: managing change requests and roadmap negotiations with Salesforce and SAP simultaneously, while keeping delivery timelines coherent for internal engineering teams. Streamlining those API integrations cut 15% off the sales cycle — a metric that surprised even the commercial team.
+        </p>
+        <div class="pills">
+          <span class="pill">&#8593; 25% launch cycle efficiency</span>
+          <span class="pill">&#8595; 15% sales cycle via API integration</span>
+          <span class="pill">3 new payment methods shipped</span>
+          <span class="pill blue">Salesforce · SAP vendor management</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Independent -->
+    <div class="exp-item fu">
+      <div class="exp-meta">
+        <div class="exp-date">Jun 2023 — Dec 2024</div>
+        <div class="exp-co">Independent</div>
+        <div class="exp-industry">Advisory · MBA</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Independent Advisor &amp; Leadership Development</div>
+        <p class="exp-narrative">
+          I used this period deliberately — not as a gap, but as an investment. Enrolling in the <strong>Executive MBA at Amsterdam Business School</strong> gave me the strategic and systems-thinking frameworks to complement my operational depth. In parallel, I advised on a P2P digital wallet expansion, translating user onboarding friction into product changes that aligned with faster IBAN payment rails.
+        </p>
+        <div class="pills">
+          <span class="pill">Executive MBA · ABS (ongoing)</span>
+          <span class="pill blue">P2P wallet strategy advisory</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASML -->
+    <div class="exp-item fu">
+      <div class="exp-meta">
+        <div class="exp-date">Apr 2018 — Oct 2022</div>
+        <div class="exp-co">ASML N.V.</div>
+        <div class="exp-industry">Semiconductors</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Scrum Master / Design Engineer</div>
+        <p class="exp-narrative">
+          ASML is where I developed my conviction that <strong>the best product insights come from the factory floor, not the boardroom.</strong> As a design engineer turned scrum master, I became the connective tissue between engineering teams, IT operations, and external vendors — translating technical realities into delivery commitments that actually held.
+        </p>
+        <p class="exp-narrative">
+          I introduced the team's first formal availability KPIs (MTBF, MTTF), built the measurement infrastructure, and watched a 15% reduction in downtime follow. That experience — quantifying what had previously been vague — is what eventually pulled me toward product management. Numbers make arguments that feelings can't.
+        </p>
+        <div class="pills">
+          <span class="pill">&#8593; 15% feature delivery rate</span>
+          <span class="pill">&#8595; 15% downtime via KPI program</span>
+          <span class="pill">2 external vendor relationships managed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accenture -->
+    <div class="exp-item fu">
+      <div class="exp-meta">
+        <div class="exp-date">Jul 2011 — Jun 2014</div>
+        <div class="exp-co">Accenture</div>
+        <div class="exp-industry">Consulting</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Team Lead</div>
+        <p class="exp-narrative">
+          My first lesson in the gap between how processes are designed and how people actually use them. Leading cross-functional teams in release planning, I redesigned delivery workflows that reduced execution time by 70% — and earned enough recognition internally to confirm that improving how teams work is its own form of product.
+        </p>
+        <div class="pills">
+          <span class="pill">&#8595; 70% execution time</span>
+          <span class="pill">Multiple internal delivery awards</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ============================================================
+     AI PROJECT
+============================================================ -->
+<section id="ai-project">
+  <div class="container">
+    <div class="sec-label fu">AI Lab</div>
+    <h2 class="sec-title fu">Learning agentic AI — by building with it</h2>
+    <p class="sec-sub fu">I believe the next frontier for B2B product managers is understanding how autonomous agents change workflows. So I'm building one.</p>
+    <div class="ai-project-card fu">
+      <div class="ai-card-l">
+        <div class="sec-label" style="margin-bottom:.5rem">Project</div>
+        <div class="sec-title" style="font-size:1.5rem;margin-bottom:1rem">Trading Ops Agent</div>
+        <p>
+          Energy trading operations generate enormous amounts of unstructured signal — auction results, regulatory notifications, counterparty communications, platform alerts. Today, much of this is processed manually by operations teams. <strong>I'm building an agentic workflow tool that automates the routing, summarisation, and prioritisation of that signal.</strong>
+        </p>
+        <p>
+          The project is as much a learning exercise as a product: I'm studying how LLMs reason under uncertainty, how to design reliable agent loops, and where human oversight still belongs in the chain. The PM perspective I bring is deliberate — I'm not just building a demo, I'm stress-testing it against real operational pain points I've seen firsthand.
+        </p>
+        <a class="btn-g" href="#contact">Follow the build &#8594;</a>
+      </div>
+      <div class="ai-card-r">
+        <div class="ai-feature">
+          <div class="ai-feature-label">Signal ingestion</div>
+          <div class="ai-feature-desc">Pulls from <strong>auction feeds, regulatory alerts, and platform events</strong> — normalises heterogeneous inputs into structured agent context.</div>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-label">Autonomous routing</div>
+          <div class="ai-feature-desc">Agent classifies urgency, assigns ownership, and <strong>escalates to humans only when confidence is below threshold</strong> — the human-in-the-loop stays intentional.</div>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-label">Ops summarisation</div>
+          <div class="ai-feature-desc">Generates <strong>shift-start briefings</strong> from overnight event logs — replacing 30-minute manual triage with a structured 2-minute read.</div>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-label">What I'm learning</div>
+          <div class="ai-feature-desc">ReAct prompting · Tool use · Agent evaluation · <strong>When to trust the model and when to hard-code the rule.</strong></div>
+        </div>
+        <div class="ai-status">
+          <div class="ai-status-dot"></div>
+          Active build — prototype stage
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ============================================================
+     CASE STUDIES
+============================================================ -->
+<section id="cases">
+  <div class="container">
+    <div class="sec-label fu">Case Studies</div>
+    <h2 class="sec-title fu">Three problems worth writing home about</h2>
+    <p class="sec-sub fu">Each one starts with a user nobody was fully listening to — and ends with a system that works better for everyone.</p>
+    <div class="cases-grid fu">
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-domain">Energy Trading · ETPA</div>
+          <div class="case-title">From fragile to 99.95% — rebuilding a trading platform's reliability foundation</div>
+          <p class="case-summary">Deployment failures were eroding enterprise trust. I led the decoupled architecture initiative and observability overhaul that changed the engineering team's relationship with production.</p>
+        </div>
+        <div class="case-foot">
+          <div class="case-metrics">
+            <div><span class="cm-n">~50%</span><span class="cm-l">Fewer deploy issues</span></div>
+            <div><span class="cm-n">~30%</span><span class="cm-l">MTTD reduction</span></div>
+          </div>
+          <span class="case-arr">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-domain">Energy Trading · ETPA</div>
+          <div class="case-title">Sitting next to traders — how direct discovery shaped an €2M roadmap</div>
+          <p class="case-summary">No existing feedback loops. No structured research. I built the discovery process from scratch, validated with enterprise customers, and turned operational pain into a funded roadmap.</p>
+        </div>
+        <div class="case-foot">
+          <div class="case-metrics">
+            <div><span class="cm-n">85%</span><span class="cm-l">Pilot approval rate</span></div>
+            <div><span class="cm-n">€2M</span><span class="cm-l">Revenue target</span></div>
+          </div>
+          <span class="case-arr">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-domain">EV Infrastructure · EVBox</div>
+          <div class="case-title">Vendor alignment as a product strategy — Salesforce, SAP, and a shrinking sales cycle</div>
+          <p class="case-summary">Managing two major vendor roadmaps simultaneously while keeping internal engineering coherent. The unlock wasn't technical — it was turning vendor relationships into a structured product discipline.</p>
+        </div>
+        <div class="case-foot">
+          <div class="case-metrics">
+            <div><span class="cm-n">15%</span><span class="cm-l">Sales cycle reduction</span></div>
+            <div><span class="cm-n">25%</span><span class="cm-l">Launch efficiency</span></div>
+          </div>
+          <span class="case-arr">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="case-card accent">
+        <div class="case-head">
+          <div class="case-domain" style="color:var(--terra)">Coming soon</div>
+          <div class="case-title">The AI agent project — a PM building what they preach</div>
+          <p class="case-summary">A full case study on the Trading Ops Agent: the problem definition, the build decisions, and what it's taught me about AI product management. In progress.</p>
+        </div>
+        <div class="case-foot">
+          <a href="#contact" style="font-size:.85rem;color:var(--terra);font-weight:500;text-decoration:none">Notify me when live &#8594;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ============================================================
+     WRITING
+============================================================ -->
+<section class="writing-bg" id="writing">
+  <div class="container">
+    <div class="sec-label fu">Writing</div>
+    <h2 class="sec-title fu">What I think about between meetings</h2>
+    <p class="sec-sub fu">I write regularly on LinkedIn about product craft, trading platforms, observability, and the honest reality of managing mission-critical systems. These are some of my most-read posts.</p>
+
+    <div class="li-note fu">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      These posts live on LinkedIn. <a href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">Follow me there</a> for new writing every week — replace the titles below with your actual best-performing posts.
+    </div>
+
+    <div class="fu">
+      <a class="post-item" href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">
+        <div class="post-date">Replace with date</div>
+        <div>
+          <div class="post-title">Why "platform reliability" is a product problem, not an engineering one</div>
+          <div class="post-exc">SLOs don't enforce themselves. Someone has to decide what "good enough" means — and it shouldn't be the on-call engineer at 2am.</div>
+        </div>
+        <div class="post-cta">Read on LinkedIn &#8599;</div>
+      </a>
+      <a class="post-item" href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">
+        <div class="post-date">Replace with date</div>
+        <div>
+          <div class="post-title">What energy trading taught me about B2B product management</div>
+          <div class="post-exc">When your users are traders and a bug costs real money in real-time, your definition of "done" changes permanently.</div>
+        </div>
+        <div class="post-cta">Read on LinkedIn &#8599;</div>
+      </a>
+      <a class="post-item" href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">
+        <div class="post-date">Replace with date</div>
+        <div>
+          <div class="post-title">I'm building an agentic AI tool. Here's what I've learned in the first 4 weeks.</div>
+          <div class="post-exc">The gap between "I understand LLMs" and "I can build a reliable agent loop" is humbling. Here's my honest update.</div>
+        </div>
+        <div class="post-cta">Read on LinkedIn &#8599;</div>
+      </a>
+      <a class="post-item" href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">
+        <div class="post-date">Replace with date</div>
+        <div>
+          <div class="post-title">Vendor management is product management — and nobody talks about it</div>
+          <div class="post-exc">Managing Salesforce and SAP simultaneously taught me that your vendor's roadmap is your constraint. The skill is making it a lever instead.</div>
+        </div>
+        <div class="post-cta">Read on LinkedIn &#8599;</div>
+      </a>
+    </div>
+
+    <div class="li-profile-cta fu">
+      <a href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        See all posts on LinkedIn
+      </a>
+      <span>I post 2–3 times a week on product, platforms, and AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section class="contact-bg" id="contact">
+  <div class="container">
+    <div class="contact-grid fu">
+      <div class="contact-l">
+        <div class="sec-label">Contact</div>
+        <h2 class="sec-title">Let's build something worth building</h2>
+        <p>Whether you're hiring, exploring advisory conversations, or want to talk about agentic AI in B2B contexts — I'm genuinely interested. I respond within 48 hours.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:vivekkr0611@gmail.com">&#9993; Email me</a>
+          <a class="contact-link" href="https://www.linkedin.com/in/vivekkr0611" target="_blank" rel="noopener">in LinkedIn</a>
+          <!-- Replace href below with your actual CV file path once uploaded -->
+          <a class="contact-link" href="Vivek_Kumar_CV.pdf" download>&#8595; Download CV</a>
+        </div>
+      </div>
+      <div class="contact-r">
+        <blockquote>"The most dangerous assumption in product is that you already understand the user. I've rebuilt that assumption every single role."</blockquote>
+        <div class="avail">
+          <div class="avail-dot"></div>
+          Open to the right opportunity — Rotterdam, NL · open to remote / hybrid
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2025 Vivek Kumar · Rotterdam, NL · vivekkr0611@gmail.com</p>
+  <p>Built with intention. Updated with honesty.</p>
+</footer>
+
+<!-- ============================================================
+     SCROLL ANIMATIONS
+============================================================ -->
+<script>
+(function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('vis');
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(function(el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
